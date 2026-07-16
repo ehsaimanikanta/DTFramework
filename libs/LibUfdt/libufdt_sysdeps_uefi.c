@@ -1,10 +1,9 @@
+// Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+// SPDX-License-Identifier: BSD-3-Clause Clear
+
 /** @file libufdt_sysdeps_uefi.c
  *
  * Qualcomm Silicon External package declaration file.
- *
- * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
- * All rights reserved.
- * Confidential and Proprietary - Qualcomm Technologies, Inc.
  *
 **/
 

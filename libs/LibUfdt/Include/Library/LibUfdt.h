@@ -1,10 +1,9 @@
+// Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+// SPDX-License-Identifier: BSD-3-Clause Clear
+
 /** @file LibUfdt.h
  *
  * Public API header for the LibUfdt EDK2 library.
- *
- * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
- * All rights reserved.
- * Confidential and Proprietary - Qualcomm Technologies, Inc.
  *
 **/
 
@@ -59,9 +58,9 @@ typedef struct fdt_header FDT_HEADER;
  * pulling in platform-specific driver headers.
  **/
 struct fdt_entry_node {
-  fdt64_t                address; ///< Physical address of the FDT/DTBO blob.
-  fdt64_t                size;    ///< Size of the blob in bytes.
-  struct fdt_entry_node  *next;   ///< Next node in the list, or NULL.
+  fdt64_t                  address; ///< Physical address of the FDT/DTBO blob.
+  fdt64_t                  size;    ///< Size of the blob in bytes.
+  struct fdt_entry_node    *next;   ///< Next node in the list, or NULL.
 };
 
 /**
@@ -126,9 +125,9 @@ ufdt_apply_multi_overlay (
   struct fdt_entry_node  *DtsList
   )
 {
-  struct fdt_header      *CurrentFdt  = MainFdtHdr;
-  size_t                 CurrentSize  = MainFdtSize;
-  struct fdt_entry_node  *Node        = DtsList;
+  struct fdt_header      *CurrentFdt = MainFdtHdr;
+  size_t                 CurrentSize = MainFdtSize;
+  struct fdt_entry_node  *Node       = DtsList;
 
   while (Node != NULL) {
     struct fdt_header  *ResultFdt;

@@ -1,10 +1,9 @@
+// Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+// SPDX-License-Identifier: BSD-3-Clause Clear
+
 /** @file LibUfdtSupport.h
  *
  * Qualcomm Silicon External package declaration file.
- *
- * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
- * All rights reserved.
- * Confidential and Proprietary - Qualcomm Technologies, Inc.
  *
 **/
 
@@ -40,15 +39,15 @@
  *   __int8_t_defined      : glibc stdint.h (defines all signed types under this guard)
  *   _BITS_STDINT_INTN_H   : glibc bits/stdint-intn.h file guard
  */
-#if !defined(_INT64_T_DEFINED) && !defined(__int8_t_defined) && !defined(_BITS_STDINT_INTN_H)
-  #define _INT64_T_DEFINED
-  typedef INT64 int64_t;
+#if !defined (_INT64_T_DEFINED) && !defined (__int8_t_defined) && !defined (_BITS_STDINT_INTN_H)
+#define _INT64_T_DEFINED
+typedef INT64 int64_t;
 #endif
 
-#if !defined(_SSIZE_T_DEFINED) && !defined(_SSIZE_T)
-  #define _SSIZE_T_DEFINED
-  #define _SSIZE_T
-  typedef INTN ssize_t;
+#if !defined (_SSIZE_T_DEFINED) && !defined (_SSIZE_T)
+#define _SSIZE_T_DEFINED
+#define _SSIZE_T
+typedef INTN ssize_t;
 #endif
 
 /* ptrdiff_t
@@ -57,11 +56,11 @@
  *   _PTRDIFF_T            : Clang built-in __stddef_ptrdiff_t.h
  *   _PTRDIFF_T_           : GCC built-in stddef.h
  */
-#if !defined(_PTRDIFF_T_DEFINED) && !defined(_PTRDIFF_T) && !defined(_PTRDIFF_T_)
-  #define _PTRDIFF_T_DEFINED
-  #define _PTRDIFF_T
-  #define _PTRDIFF_T_
-  typedef INTN ptrdiff_t;
+#if !defined (_PTRDIFF_T_DEFINED) && !defined (_PTRDIFF_T) && !defined (_PTRDIFF_T_)
+#define _PTRDIFF_T_DEFINED
+#define _PTRDIFF_T
+#define _PTRDIFF_T_
+typedef INTN ptrdiff_t;
 #endif
 
 /* uintmax_t
@@ -70,9 +69,9 @@
  *   _STDINT_H             : glibc stdint.h file guard (uintmax_t has no own guard in glibc)
  *   _STDINT_H_            : alternate stdint.h guard used by some toolchains
  */
-#if !defined(_UINTMAX_T_DEFINED) && !defined(_STDINT_H) && !defined(_STDINT_H_)
-  #define _UINTMAX_T_DEFINED
-  typedef UINT64 uintmax_t;
+#if !defined (_UINTMAX_T_DEFINED) && !defined (_STDINT_H) && !defined (_STDINT_H_)
+#define _UINTMAX_T_DEFINED
+typedef UINT64 uintmax_t;
 #endif
 
 /* SIZE_MAX - maximum value of size_t */
