@@ -44,6 +44,22 @@
 int fdt_merge_overlay(const void *primary_blob, size_t pb_size, void *overlay_blob, size_t ob_size, void *merge_blob, size_t mb_size);
 
 /**
+  * ufdt_merge_overlay - Merge overlay into primary blob using libufdt
+  * @primary_blob:    Primary DTB tree
+  * @pb_size:         size of Primary Blob
+  * @overlay_blob:    Overlay DTB tree
+  * @ob_size:         size of Overlay Blob
+  * @merge_blob:      Merged  DTB tree
+  * @mb_size:         size of Merge Blob
+  *
+  * returns: FDT_ERR_QC_NOERROR (success) else error indicator
+  *
+  * Uses libufdt fast overlay engine (O(1) hash-table lookups) instead of
+  * the libfdt-based fdt_overlay_apply() (O(n) linear scans).
+  */
+int ufdt_merge_overlay(const void *primary_blob, size_t pb_size, void *overlay_blob, size_t ob_size, void *merge_blob, size_t mb_size);
+
+/**
  * fdt_check_for_valid_blob_handle - Sanity check blob pointer
  * @blob: pointer to the device tree blob
  * @bsize: size of blob
